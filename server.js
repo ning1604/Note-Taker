@@ -41,12 +41,23 @@ app.post('/api/notes', (req, res) => {
   // assigns id to note
   newNote.id = uuidv4();
   // reads db.json file and pushes data into db.json
-  const data = JSON.parse(fs.readFileSync('./db/db.json', 'utf8'));
+  let data = JSON.parse(fs.readFileSync('./db/db.json', 'utf8'));
   data.push(newNote);
   // writes file to db.json
   fs.writeFileSync('./db/db.json', JSON.stringify(data));
   res.json(data)
 });
+
+// DELETE Route for specific note
+app.delete('/api/notes/:id', (req, res) => {
+  // reads db.json file
+  let data = JSON.parse(fs.readFileSync('./db/db.json', 'utf8'));
+  // filters out note with specific id
+  let updatedData = data.filter(note => note.id !== req.params.id);
+  // rewrites file to db.json
+  fs.writeFileSync('./db/db.json', JSON.stringify(updatedData));
+  res.json(updatedData)
+})
 
 app.listen(PORT, () =>
   console.log(`App listening at http://localhost:${PORT}`)

@@ -27,8 +27,8 @@ npm start
 
 ## Usage
 The following images show the web application's appearance and functionality:<br />
-![Image of Password-Generator webpage](Assets/demo-01.png)
-![Image of Password-Generator webpage](Assets/demo-02.png)
+![Existing notes are listed in the left-hand column with empty fields on the right-hand side for the new note’s title and text.](Assets/demo-01.png)
+![Note titled “Balance accounts” reads, “Balance account books by end of day Monday,” with other notes listed on the left.](Assets/demo-02.png)
 
 ## License
 This project is licensed under the MIT license.
